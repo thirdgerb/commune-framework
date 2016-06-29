@@ -1,10 +1,6 @@
 {
     "name": "thirdgerb/commune-framework",
-    "description": "A PHP framework construct of laravel components.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
+    "description": "用laravel组件修改而成的框架,用于多端访问场景",
     "license": "MIT",
     "type": "project",
     "require": {
