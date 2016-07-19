@@ -23,6 +23,8 @@ class AppArtisanServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commands = [
+        'ProjectOptimize'   =>  'command.project.optimize',
+        'ProjectClear'      =>  'command.project.clear',
         'ClearCompiled' => 'command.clear-compiled',
         'ClearResets' => 'command.auth.resets.clear',
         //'ConfigCache' => 'command.config.cache',
@@ -47,8 +49,6 @@ class AppArtisanServiceProvider extends ServiceProvider
     protected $devCommands = [
         //'AppName' => 'command.app.name',
         'ProjectCreate' =>  'command.project.create',
-        'ProjectOptimize'   =>  'command.project.optimize',
-        'ProjectClear'      =>  'command.project.clear',
         'AuthMake' => 'command.auth.make',
         'CacheTable' => 'command.cache.table',
         'ConsoleMake' => 'command.console.make',

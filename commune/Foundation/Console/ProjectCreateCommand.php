@@ -91,9 +91,6 @@ class ProjectCreateCommand extends Command
         $realPath = $file->getRealPath();
         $newPath  = str_replace($this->getStubPath() ,$this->projectPath(),$realPath);
         $path = pathinfo($newPath);
-        if(isset($path['extension']) && $path['extension'] == 'git'){
-            $newPath = $path['dirname'].DIRECTORY_SEPARATOR.'.git'.$path['filename'];
-        }
 
         if(!realpath($path['dirname'])){
             $this->file->makeDirectory($path['dirname'],0755,true);
@@ -146,7 +143,8 @@ class ProjectCreateCommand extends Command
 
     protected function getStubFiles()
     {
-        return $this->file->allFiles($this->getStubPath());
+        $directory = $this->getStubPath();
+        return iterator_to_array(Finder::create()->files()->ignoreDotFiles(false)->in($directory), false);
     }
 
     protected function sayAbort()
