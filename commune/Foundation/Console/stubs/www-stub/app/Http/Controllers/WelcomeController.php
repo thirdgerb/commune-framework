@@ -2,8 +2,6 @@
 
 namespace WWW\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use WWW\Http\Requests;
 
 class WelcomeController extends Controller

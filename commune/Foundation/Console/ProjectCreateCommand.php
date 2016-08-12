@@ -126,7 +126,7 @@ class ProjectCreateCommand extends Command
 
     protected function getStubPath()
     {
-        return realpath($this->laravel->storagePath().'/framework/projects/stub/');
+        return realpath($this->laravel->basePath().'/commune/Foundation/Console/stubs/www-stub');
     }
 
     /**
@@ -144,6 +144,10 @@ class ProjectCreateCommand extends Command
     protected function getStubFiles()
     {
         $directory = $this->getStubPath();
+        if(!$directory){
+            $this->error('stab files not found!');
+            exit;
+        }
         return iterator_to_array(Finder::create()->files()->ignoreDotFiles(false)->in($directory), false);
     }
 

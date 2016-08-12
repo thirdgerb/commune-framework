@@ -57,7 +57,7 @@ class RouteServiceProvider extends ServiceProvider
 
             //开发环境下引入测试路由
             $testRoutesPath = app_path('Http/testRoutes.php');
-            if(!$this->app->isProduction() && file_exists($testRoutesPath)){
+            if($this->app->isLocal() && file_exists($testRoutesPath)){
                 require $testRoutesPath;
             }
         });
