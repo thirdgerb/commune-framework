@@ -33,6 +33,7 @@
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php -r \"copy('.env.example', '.env');\"",
             "php artisan key:generate",
+            "php artisan project:create WWW',
             "php artisan optimize"
         ],
         "post-update-cmd": [
